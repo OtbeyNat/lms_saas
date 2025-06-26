@@ -1,14 +1,52 @@
-import { Button } from '@/components/ui/button'
-import React from 'react'
+import CompanionCard from '@/components/CompanionCard'
+import CompanionsList from '@/components/CompanionsList'
+import CTA from '@/components/CTA'
+import { recentSessions } from '@/constants'
 
 const Page = () => {
   return (
-    <div>
-      <h1 className='text-2xl underline'>Welcome To LMS SaaS App</h1>
-      <Button>
-        Let's get Started
-      </Button>
-    </div>
+    <main>
+      <h1 className='text-2xl underline'>Popular Companions</h1>
+
+      <section className='home-section'>
+        <CompanionCard
+          id="123"
+          name="Name"
+          topic="Topic"
+          subject="Subject"
+          duration={100}
+          color="blue"
+          bookmarked={true}
+        />
+        <CompanionCard 
+          id="123"
+          name="Name"
+          topic="Topic"
+          subject="Subject"
+          duration={100}
+          color="purple"
+          bookmarked={true}
+        />
+        <CompanionCard
+          id="123"
+          name="Name"
+          topic="Topic"
+          subject="Subject"
+          duration={100}
+          color="yellow"
+          bookmarked={true}
+        />
+      </section>
+
+      <section className='home-section'>
+        <CompanionsList
+          title='Recent Sessions'
+          companions={recentSessions}
+          classNames="w-2/3 max-lg:w-full"
+        />
+        <CTA/>
+      </section>
+    </main>
     
   )
 }
